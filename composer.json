@@ -1,0 +1,25 @@
+{
+    "name": "hostlink/wbiztool-php",
+    "description": "php library for wbiztool",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Raymond Chong",
+            "email": "mathsgod@yahoo.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "guzzlehttp/guzzle": "^7.3",
+        "nesbot/carbon": "^2.46"
+    },
+    "autoload": {
+        "psr-4": {
+            "WBizTool\\": "src/WBizTool/"
+        },
+        "classmap": [
+            "src/WBizTool.php"
+        ]
+    }
+}
