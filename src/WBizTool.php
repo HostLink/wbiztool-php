@@ -53,6 +53,7 @@ class WBizTool
             ]
         ]);
 
-        return json_decode($resp->getBody(), true);
+        $ret = json_decode($resp->getBody(), true);
+        return $ret["history"];
     }
 }
