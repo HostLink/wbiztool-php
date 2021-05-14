@@ -23,6 +23,19 @@ class WBizTool
         $this->whatsapp_client = $whatsapp_client;
     }
 
+    public function getStatus()
+    {
+        $resp = $this->client->post("https://wbiztool.com/api/v1/whatsapp-client-status/", [
+            "form_params" => [
+                "client_id" => $this->client_id,
+                "api_key" => $this->api_key,
+                "whatsapp_client" => $this->whatsapp_client
+            ]
+        ]);
+        $data = json_decode($resp->getBody(), true);
+        return $data["message"];
+    }
+
     public function sendText(string $country_code, string $phone, string $msg): array
     {
         $resp = $this->client->post($this->uri, [
